@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import RealmSwift
 
 class RemainderListViewModel {
+    
+    private let remainderListService = RemainderListService()
+    var items: Results<Remainder>?
     
 }
