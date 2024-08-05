@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FolderCollectionViewCell" id="gTV-IL-0wX" customClass="FolderCollectionViewCell" customModule="RemindEase" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="325" height="87"/>
+            <rect key="frame" x="0.0" y="0.0" width="453" height="254"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="325" height="87"/>
+                <rect key="frame" x="0.0" y="0.0" width="453" height="254"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UY-ST-i2e">
-                        <rect key="frame" x="16" y="8" width="293" height="71"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8UY-ST-i2e" customClass="CustomizeView" customModule="RemindEase" customModuleProvider="target">
+                        <rect key="frame" x="16" y="8" width="421" height="238"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6e-AL-hsS">
-                                <rect key="frame" x="16" y="16" width="261" height="39"/>
+                                <rect key="frame" x="16" y="16" width="389" height="206"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,6 +35,11 @@
                             <constraint firstAttribute="trailing" secondItem="O6e-AL-hsS" secondAttribute="trailing" constant="16" id="tn2-ZK-9dr"/>
                             <constraint firstAttribute="bottom" secondItem="O6e-AL-hsS" secondAttribute="bottom" constant="16" id="uLh-Q4-VCl"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -45,16 +50,16 @@
                 <constraint firstItem="8UY-ST-i2e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="MU2-DT-piK"/>
                 <constraint firstItem="8UY-ST-i2e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="yKi-bd-EWm"/>
             </constraints>
-            <size key="customSize" width="325" height="87"/>
+            <size key="customSize" width="453" height="254"/>
             <connections>
                 <outlet property="lblName" destination="O6e-AL-hsS" id="fGI-LN-6QS"/>
             </connections>
-            <point key="canvasLocation" x="283.20610687022901" y="1.7605633802816902"/>
+            <point key="canvasLocation" x="380.91603053435114" y="60.563380281690144"/>
         </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="Item">
-            <color red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
