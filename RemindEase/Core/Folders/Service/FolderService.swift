@@ -22,7 +22,7 @@ class FolderService {
         }
     }
     
-    func fetchFolders(with limit: Int) async throws -> [OnlineFolder] {
+    func fetchFolders(with limit: Int) async throws -> [Folder] {
         
         var query = FirestoreConstants
             .FolderCollection.order(by: "createAt").limit(to: limit)
@@ -34,7 +34,7 @@ class FolderService {
         let snapShot =  try await query.getDocuments()
         self.lastDocumentSnapshot = snapShot.documents.last
       
-        let folders = snapShot.documents.compactMap({ try? $0.data(as: OnlineFolder.self) })
+        let folders = snapShot.documents.compactMap({ Folder(dic: $0.data()) })
         return folders
     }
     

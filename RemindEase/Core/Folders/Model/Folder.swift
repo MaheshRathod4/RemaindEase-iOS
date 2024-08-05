@@ -10,14 +10,11 @@ import RealmSwift
 import FirebaseFirestore
 import IGListKit
 
-class Folder: Object,ListDiffable {
-    @objc dynamic var id = ""
-    @objc dynamic var name = ""
-    @objc dynamic var ownerID = ""
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+class Folder: Object,ListDiffable,Codable {
+    @Persisted(primaryKey: true) var id = ""
+    @Persisted var name = ""
+    @Persisted var ownerID = ""
+    @Persisted var createAt:Date?
     
     func diffIdentifier() -> NSObjectProtocol {
         return id as NSString
@@ -27,20 +24,16 @@ class Folder: Object,ListDiffable {
         guard let object = object as? Folder else { return false }
         return id == object.id && name == object.name
     }
-}
-
-
-class OnlineFolder: Codable {
-
-    @DocumentID private var folderID: String?
-    var name: String = ""
-    var ownerID: String = ""
     
-    var id: String {
-        return folderID ?? UUID().uuidString
+    required override init() {
+        super.init()
     }
     
-    var dictionary: [String: Any] {
-        return ["name": name, "ownerID": ownerID]
+    required init(dic:[String:Any]) {
+        self.name = dic["name"] as? String ?? ""
+        self.id = dic["id"] as? String ?? ""
+        self.ownerID = dic["id"] as? String ?? ""
+        let timestamp = dic["createAt"] as? Timestamp
+        self.createAt = timestamp?.dateValue()
     }
 }

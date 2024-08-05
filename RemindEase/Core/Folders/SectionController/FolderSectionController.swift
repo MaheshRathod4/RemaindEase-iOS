@@ -11,6 +11,12 @@ import IGListKit
 class FolderSectionController : ListSectionController {
     
     var item: Folder?
+    weak var folderClickDelegate:FolderClickDelegate?
+    
+    init(folderClickDelegate: FolderClickDelegate) {
+        self.folderClickDelegate = folderClickDelegate
+        super.init()
+    }
      
      override func sizeForItem(at index: Int) -> CGSize {
          return CGSize(width: UIScreen.main.bounds.width, height: 100)
@@ -27,6 +33,8 @@ class FolderSectionController : ListSectionController {
      }
     
     override func didSelectItem(at index: Int) {
-        
+        if let item {
+            folderClickDelegate?.didTapOnFolder(folder: item)
+        }
     }
 }

@@ -85,7 +85,7 @@ extension FolderViewController: ListAdapterDataSource {
         if object is LoadingIndicator {
             return LoadingSectionController()
         } else {
-            return FolderSectionController()
+            return FolderSectionController(folderClickDelegate: self)
         }
     }
     
@@ -106,4 +106,13 @@ extension FolderViewController: ListAdapterDataSource {
 
 extension FolderViewController : UIScrollViewDelegate {
     
+}
+
+extension FolderViewController : FolderClickDelegate {
+    func didTapOnFolder(folder: Folder) {
+        let vc = Storyboards.RemainderList.viewController(RemainderListViewController.self) as! RemainderListViewController
+        vc.hidesBottomBarWhenPushed = true
+        vc.selectedFolder = folder
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
