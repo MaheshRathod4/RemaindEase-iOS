@@ -46,9 +46,17 @@ class RemainderListViewController: UIViewController {
         adapter.scrollViewDelegate = self
         adapter.collectionView = collectionView
         adapter.dataSource = self
-       // self.calendarView.scope = .month
+        calendarView.delegate = self
+        calendarView.dataSource = self
+        calendarView.appearance.weekdayFont = UIFont.preferredFont(forTextStyle: .footnote)
+        calendarView.appearance.weekdayTextColor = .subTitle
+        calendarView.appearance.titleFont = UIFont.preferredFont(forTextStyle: .body)
+        calendarView.appearance.headerTitleFont = UIFont.preferredFont(forTextStyle: .headline)
+        calendarView.appearance.eventDefaultColor = .pink
+        calendarView.appearance.titlePlaceholderColor = .subTitle
+        calendarView.appearance.selectionColor = .accent
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
         collectionView.panGestureRecognizer.require(toFail: self.scopeGesture)
-
         collectionView.register(UINib(nibName: "RemainderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RemainderCollectionViewCell")
     }
 
@@ -106,3 +114,6 @@ extension RemainderListViewController : UIScrollViewDelegate,ListAdapterDataSour
     }
 }
 
+extension RemainderListViewController : FSCalendarDataSource, FSCalendarDelegate {
+    
+}
