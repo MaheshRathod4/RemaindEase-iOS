@@ -11,6 +11,9 @@ import UIKit
 enum Storyboards : String {
    case Folder
    case RemainderList
+   case Main
+   case Auth
+   case Loader
 }
 
 extension Storyboards {

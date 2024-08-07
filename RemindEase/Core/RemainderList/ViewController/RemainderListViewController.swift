@@ -9,6 +9,7 @@ import UIKit
 import FSCalendar
 import IGListKit
 import RealmSwift
+import SwiftUI
 
 class RemainderListViewController: UIViewController {
 
@@ -56,10 +57,17 @@ class RemainderListViewController: UIViewController {
         calendarView.appearance.titlePlaceholderColor = .subTitle
         calendarView.appearance.selectionColor = .accent
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+      //  calendarView.firstWeekday = 2
         collectionView.panGestureRecognizer.require(toFail: self.scopeGesture)
         collectionView.register(UINib(nibName: "RemainderCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RemainderCollectionViewCell")
     }
-
+    
+    @IBAction func didTapOnAddRemainder(_ sender: Any) {
+        let vc = UIHostingController(rootView: AddRemainderView())
+        vc.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(vc, animated: true)
+    }
+    
 }
 
 extension RemainderListViewController : UIGestureRecognizerDelegate {
