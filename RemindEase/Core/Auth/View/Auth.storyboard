@@ -195,6 +195,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLogin" destination="xUO-uH-CMY" id="njT-cD-A9C"/>
                         <outlet property="themeEmailTextFieldView" destination="gyz-nI-RED" id="ijl-Xh-1Io"/>
                         <outlet property="themePasswordTextFieldView" destination="Uqd-RK-MMz" id="bPj-ib-8cH"/>
                     </connections>

@@ -10,3 +10,7 @@ import Foundation
 protocol FolderClickDelegate: AnyObject {
     func didTapOnFolder(folder: Folder)
 }
+
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool { get }
+}
