@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         themeEmailTextFieldView.lblTitle.text = "Email address"
         themeEmailTextFieldView.textField.keyboardType = .emailAddress
         themeEmailTextFieldView.textField.placeholder = "Email address"
+        themePasswordTextFieldView.textField.returnKeyType = .done
     }
     
     func setupBindings() {

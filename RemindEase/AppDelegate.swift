@@ -6,8 +6,11 @@
 //
 
 import UIKit
-import FirebaseCore
 import RealmSwift
+import IQKeyboardManagerSwift
+import FirebaseCore
+import FirebaseMessaging
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        IQKeyboardManager.shared.enable = true
+        Messaging.messaging().delegate = self
+        registerForPushNotifications(application: application)
         // Realm Configuration with Migration
         let config = Realm.Configuration(
             schemaVersion: 2, // Increment this number each time you change the schema
@@ -53,3 +59,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
+extension AppDelegate : MessagingDelegate,UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+    
+    
+    private func registerForPushNotifications(application: UIApplication) {
+        UNUserNotificationCenter.current().delegate = self
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) {
+            (granted, error) in
+            guard granted else { return }
+            DispatchQueue.main.async {
+                application.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+         print("Firebase registration token: \(String(describing: fcmToken))")
+    }
+}
