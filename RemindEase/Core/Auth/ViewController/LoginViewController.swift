@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var themePasswordTextFieldView: ThemePasswordView!
     @IBOutlet weak var themeEmailTextFieldView: ThemeTextFieldView!
     
-    private let viewModel = AuthViewModel()
+    private let viewModel = LoginViewModel()
     var loader = LoaderViewController()
     private var cancellable = Set<AnyCancellable>()
 
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         viewModel.$isFormValid
             .receive(on: RunLoop.main)
             .sink { [weak self] isFormValid in
-                self?.btnLogin.isEnabled = isFormValid
+                self?.btnLogin.isUserInteractionEnabled = isFormValid
                 self?.btnLogin.alpha = isFormValid ? 1.0 : 0.6
             }
             .store(in: &cancellable)
@@ -60,8 +60,8 @@ class LoginViewController: UIViewController {
         }.store(in: &cancellable)
         
         viewModel.$authError.sink { [weak self] authError in
-            guard let self else { return }
-            print(authError)
+            guard let self,let authError else { return }
+            showAlertSafely(title: "Alert", message: authError.description)
         }.store(in: &cancellable)
         
         themeEmailTextFieldView.textField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
@@ -85,7 +85,8 @@ extension LoginViewController {
     }
     
     @IBAction func didTapOnSignUp(_ sender: Any) {
-        
+        let vc = Storyboards.Auth.viewController(RegisterViewController.self) as! RegisterViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didTapOnForgotPassword(_ sender: Any) {

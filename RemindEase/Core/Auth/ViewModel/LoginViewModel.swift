@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import FirebaseAuth
 
-class AuthViewModel {
+class LoginViewModel {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isFormValid: Bool = false

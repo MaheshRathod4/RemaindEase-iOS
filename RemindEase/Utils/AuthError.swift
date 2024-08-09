@@ -55,7 +55,7 @@ enum AuthError: Error {
         case .weakPassword:
             return "Your password must be at least 6 characters in length. Please try again."
         case .unknown:
-            return "An unknown error occured. Please try again."
+            return "An unknown error occurred. Please try again."
         case .userNameNotAvailable:
             return "The username is not available. Please choose a different username."
         }

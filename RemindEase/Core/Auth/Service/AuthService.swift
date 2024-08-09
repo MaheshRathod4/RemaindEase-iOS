@@ -48,6 +48,8 @@ class AuthService {
         let user = UserModel()
         user.email = email
         user.name = name
+        user.token = ""
+        user.profileImage = ""
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
         try await FirestoreConstants.UserCollection.document(id).setData(encodedUser)
         UserService.shared.currentUser = user
