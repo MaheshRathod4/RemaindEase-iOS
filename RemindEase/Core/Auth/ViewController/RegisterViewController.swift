@@ -132,7 +132,9 @@ extension RegisterViewController {
         Task {
             let result = try await viewModel.registerUser()
             if result {
-                
+                let vc = Storyboards.Auth.viewController(UploadProfileViewController.self) as! UploadProfileViewController
+                vc.viewModel = viewModel
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

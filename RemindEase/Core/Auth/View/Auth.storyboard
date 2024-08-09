@@ -466,9 +466,155 @@
             </objects>
             <point key="canvasLocation" x="872.51908396946567" y="-35.211267605633807"/>
         </scene>
+        <!--Upload Profile View Controller-->
+        <scene sceneID="D0P-KP-81n">
+            <objects>
+                <viewController storyboardIdentifier="UploadProfileViewController" id="1p7-3N-1vG" customClass="UploadProfileViewController" customModule="RemindEase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Zo-bl-Dk1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-1v-ztz">
+                                <rect key="frame" x="16" y="694" width="361" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-5j-w6F">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="qZP-Bi-LOF"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add photo" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="10"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapOnAddPhoto:" destination="1p7-3N-1vG" eventType="touchUpInside" id="N2I-fc-L2a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUK-1l-cyT">
+                                        <rect key="frame" x="0.0" y="62" width="361" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="SJb-AP-waf"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Skip for now" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="10"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapSkipForNow:" destination="1p7-3N-1vG" eventType="touchUpInside" id="qv1-vP-XO0"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLh-oX-laF">
+                                        <rect key="frame" x="0.0" y="108" width="361" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="mRe-hC-GLt"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="10"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapOnContinue:" destination="1p7-3N-1vG" eventType="touchUpInside" id="snG-cE-Tnq"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUa-eM-cBr">
+                                        <rect key="frame" x="0.0" y="108" width="361" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="mSx-0r-bzG"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Remove Photo" cornerStyle="dynamic">
+                                            <backgroundConfiguration key="background" cornerRadius="10"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapRemovePhoto:" destination="1p7-3N-1vG" eventType="touchUpInside" id="Q4U-Hz-csf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice!, how your profile is looking so far" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXT-Na-yOv">
+                                <rect key="frame" x="16" y="67" width="361" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="Title"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-hV-nze">
+                                <rect key="frame" x="132.66666666666666" y="151" width="127.99999999999997" height="128"/>
+                                <color key="backgroundColor" name="Item"/>
+                                <color key="tintColor" name="SubTitle"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="LoE-pb-phH"/>
+                                    <constraint firstAttribute="height" constant="128" id="t90-vd-xEe"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-7V-2zT">
+                                <rect key="frame" x="171.66666666666666" y="191.66666666666666" width="50" height="47"/>
+                                <color key="tintColor" name="SubTitle"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="B80-6v-l1M"/>
+                                    <constraint firstAttribute="height" constant="50" id="nH0-Rt-Wnw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apb-Ij-0Zp">
+                                <rect key="frame" x="16" y="315" width="361" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="Title"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSp-tA-UjN">
+                                <rect key="frame" x="16" y="343" width="361" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="SubTitle"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="50D-0S-V4H"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="50D-0S-V4H" firstAttribute="trailing" secondItem="6Kx-1v-ztz" secondAttribute="trailing" constant="16" id="2Da-gg-QPg"/>
+                            <constraint firstItem="AXT-Na-yOv" firstAttribute="top" secondItem="50D-0S-V4H" secondAttribute="top" constant="8" id="3BR-Yr-lT5"/>
+                            <constraint firstItem="Bf5-hV-nze" firstAttribute="centerX" secondItem="50D-0S-V4H" secondAttribute="centerX" id="6ea-Dd-Ya5"/>
+                            <constraint firstItem="jqW-7V-2zT" firstAttribute="centerY" secondItem="Bf5-hV-nze" secondAttribute="centerY" id="EJ7-M2-NMx"/>
+                            <constraint firstItem="jqW-7V-2zT" firstAttribute="centerX" secondItem="Bf5-hV-nze" secondAttribute="centerX" id="HjC-rN-BeG"/>
+                            <constraint firstItem="Bf5-hV-nze" firstAttribute="top" secondItem="AXT-Na-yOv" secondAttribute="bottom" constant="36" id="HyF-by-diA"/>
+                            <constraint firstItem="50D-0S-V4H" firstAttribute="trailing" secondItem="apb-Ij-0Zp" secondAttribute="trailing" constant="16" id="Pjn-Cj-DuO"/>
+                            <constraint firstItem="gSp-tA-UjN" firstAttribute="top" secondItem="apb-Ij-0Zp" secondAttribute="bottom" constant="4" id="Q7t-Qn-e26"/>
+                            <constraint firstItem="gSp-tA-UjN" firstAttribute="leading" secondItem="50D-0S-V4H" secondAttribute="leading" constant="16" id="Ysg-jq-cv2"/>
+                            <constraint firstAttribute="trailing" secondItem="AXT-Na-yOv" secondAttribute="trailing" constant="16" id="dsg-Dn-cFy"/>
+                            <constraint firstItem="6Kx-1v-ztz" firstAttribute="leading" secondItem="50D-0S-V4H" secondAttribute="leading" constant="16" id="hoG-Df-O1h"/>
+                            <constraint firstItem="apb-Ij-0Zp" firstAttribute="leading" secondItem="50D-0S-V4H" secondAttribute="leading" constant="16" id="nLF-mN-dnU"/>
+                            <constraint firstItem="50D-0S-V4H" firstAttribute="trailing" secondItem="gSp-tA-UjN" secondAttribute="trailing" constant="16" id="unk-N2-BNO"/>
+                            <constraint firstItem="AXT-Na-yOv" firstAttribute="leading" secondItem="50D-0S-V4H" secondAttribute="leading" constant="16" id="vaA-Cc-aII"/>
+                            <constraint firstItem="50D-0S-V4H" firstAttribute="bottom" secondItem="6Kx-1v-ztz" secondAttribute="bottom" constant="16" id="xbw-Xd-Ghz"/>
+                            <constraint firstItem="apb-Ij-0Zp" firstAttribute="top" secondItem="Bf5-hV-nze" secondAttribute="bottom" constant="36" id="xpH-DC-2h3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="fbq-5j-w6F" id="xoQ-Vv-NXu"/>
+                        <outlet property="btnContiue" destination="wLh-oX-laF" id="2KZ-eZ-16P"/>
+                        <outlet property="btnRemove" destination="dUa-eM-cBr" id="BqG-1O-C2X"/>
+                        <outlet property="btnSkip" destination="wUK-1l-cyT" id="lqE-Gt-RDf"/>
+                        <outlet property="imgPlaceholder" destination="jqW-7V-2zT" id="umv-fT-tvt"/>
+                        <outlet property="imgUser" destination="Bf5-hV-nze" id="V7x-gh-Gp1"/>
+                        <outlet property="lblEmail" destination="gSp-tA-UjN" id="fVy-At-BWc"/>
+                        <outlet property="lblName" destination="apb-Ij-0Zp" id="5PF-fc-ZZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxj-Si-zd7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620.6106870229007" y="-35.211267605633807"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="97" height="128"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
