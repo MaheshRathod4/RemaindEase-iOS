@@ -406,7 +406,6 @@
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="didTapOnSignIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2fc-dF-YjO"/>
                                                                     <action selector="didTapRegister:" destination="U2i-Lk-a5r" eventType="touchUpInside" id="ExA-X7-tN1"/>
                                                                 </connections>
                                                             </button>
@@ -455,6 +454,7 @@
                     </view>
                     <connections>
                         <outlet property="ThemeTextFieldConfimPassword" destination="dit-5q-bq8" id="Y1q-Dd-y0p"/>
+                        <outlet property="btnSignUp" destination="GcE-h2-lhw" id="ZyP-SZ-ye6"/>
                         <outlet property="imgBack" destination="VBP-68-HOQ" id="BMR-9O-7K5"/>
                         <outlet property="textFieldPhoneNumber" destination="xgv-LH-yjE" id="MxI-St-AFE"/>
                         <outlet property="themeTextFieldEmail" destination="E6m-kf-zY2" id="J4w-q3-dfN"/>

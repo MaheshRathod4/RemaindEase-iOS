@@ -16,6 +16,7 @@ class UserModel: Object,ListDiffable,Codable {
     @Persisted var email = ""
     @Persisted var name = ""
     @Persisted var token = ""
+    @Persisted var phoneNumber = ""
     @Persisted var profileImage = ""
     
     func diffIdentifier() -> NSObjectProtocol {

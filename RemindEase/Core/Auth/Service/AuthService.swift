@@ -32,11 +32,11 @@ class AuthService {
     }
     
     @MainActor
-    func createUser(withEmail email: String, password: String, name: String) async throws {
+    func createUser(withEmail email: String, password: String, name: String,phoneNumber: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.currentUser = result.user
-            try await uploadUserData(email: email, name: name, id: result.user.uid)
+            try await uploadUserData(email: email, name: name, phoneNumber: phoneNumber, id: result.user.uid)
         } catch {
             print("DEBUG: Failed to login with error \(error.localizedDescription)")
             throw error
@@ -44,10 +44,12 @@ class AuthService {
     }
     
     @MainActor
-    private func uploadUserData(email: String, name: String, id: String) async throws {
+    private func uploadUserData(email: String, name: String, phoneNumber: String,id: String) async throws {
         let user = UserModel()
         user.email = email
         user.name = name
+        user.id = id
+        user.phoneNumber = phoneNumber
         user.token = ""
         user.profileImage = ""
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
