@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var textFieldPhoneNumber: PhoneNumberTextField!
     @IBOutlet weak var themeTextFieldPassword: ThemePasswordView!
     @IBOutlet weak var themeTextFieldEmail: ThemeTextFieldView!
     @IBOutlet weak var themeTextFieldName: ThemeTextFieldView!
@@ -29,6 +31,22 @@ class RegisterViewController: UIViewController {
         themeTextFieldPassword.textField.placeholder = "EnterPassword"
         ThemeTextFieldConfimPassword.lblTitle.text = "Confirm Password"
         ThemeTextFieldConfimPassword.textField.placeholder = "Enter Confirm Password"
+        PhoneNumberKit.CountryCodePicker.alwaysShowsSearchBar = true
+        textFieldPhoneNumber.withFlag = true
+        textFieldPhoneNumber.withExamplePlaceholder = true
+        textFieldPhoneNumber.withDefaultPickerUI = true
+        let options = CountryCodePickerOptions(
+            backgroundColor: .background,
+            separatorColor: UIColor.opaqueSeparator,
+            textLabelColor: UIColor.title,
+            textLabelFont: .preferredFont(forTextStyle: .callout),
+            detailTextLabelColor: UIColor.secondaryLabel,
+            detailTextLabelFont: .preferredFont(forTextStyle: .body),
+            tintColor: .pink,
+            cellBackgroundColor: .item,
+            cellBackgroundColorSelection: UIColor.tertiarySystemGroupedBackground
+        )
+        textFieldPhoneNumber.withDefaultPickerUIOptions = options
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnBack))
         imgBack.isUserInteractionEnabled = true
         imgBack.addGestureRecognizer(tap)

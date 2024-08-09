@@ -1,16 +1,21 @@
 PODS:
-  - CountryPickerView (3.3.0)
+  - PhoneNumberKit (3.7.10):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.7.10)
+    - PhoneNumberKit/UIKit (= 3.7.10)
+  - PhoneNumberKit/PhoneNumberKitCore (3.7.10)
+  - PhoneNumberKit/UIKit (3.7.10):
+    - PhoneNumberKit/PhoneNumberKitCore
 
 DEPENDENCIES:
-  - CountryPickerView
+  - PhoneNumberKit
 
 SPEC REPOS:
   trunk:
-    - CountryPickerView
+    - PhoneNumberKit
 
 SPEC CHECKSUMS:
-  CountryPickerView: 6322ada32a80b0cd721b0267282a5c24f406f263
+  PhoneNumberKit: 3d9a20cfe8ee68f35c2a3ae9474093133f72a8a1
 
-PODFILE CHECKSUM: 6f16d30196694bafcace267dcf5f48d98bedb319
+PODFILE CHECKSUM: 5c8bc76b8ba9393a86e7c43c4a8684737d09ccb3
 
 COCOAPODS: 1.13.0

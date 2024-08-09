@@ -6,7 +6,8 @@ target 'RemindEase' do
   use_frameworks!
 
   # Pods for RemindEase
-  pod 'CountryPickerView'
+  pod 'PhoneNumberKit'
+  
   target 'RemindEaseTests' do
     inherit! :search_paths
     # Pods for testing
